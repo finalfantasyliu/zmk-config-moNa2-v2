@@ -308,3 +308,5 @@ combos:
   k: TAB
 - p: [17, 18]
   k: ENTER
+- p: [11, 12]
+  k: Ctl+SPACE
