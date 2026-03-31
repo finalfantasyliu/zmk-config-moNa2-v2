@@ -31,7 +31,12 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <11 12>;
+            key-positions = <1 2>;
+        };
+
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <17 18>;
         };
     };
 
