@@ -91,7 +91,7 @@
     /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
-        require-prior-idle-ms = <200>;  //降低以改善雙擊反應速度（原500ms太長）
+        require-prior-idle-ms = <180>;  //打字後180ms內不觸發自動切層
         excluded-positions = <14 25>;
     };
 
