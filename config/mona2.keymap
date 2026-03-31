@@ -6,11 +6,11 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 200
-#define MOUSE 5
-#define SCROLL 6
-#define VIM 7
-#define DESKTOP 8
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 200  // Encoder每次捲動量（預設100，為4K螢幕加倍）
+#define MOUSE 5    // 滑鼠層（軌跡球自動切層目標）
+#define SCROLL 6   // 捲動層（軌跡球變捲輪）
+#define VIM 7      // Vim方向鍵層（H/J/K/L）
+#define DESKTOP 8  // 桌面切換層（長按W啟用）
 
 &mt {
     flavor = "balanced";
@@ -28,22 +28,22 @@
 
         layer4_ESC {
             bindings = <&lt 4 ESC>;
-            key-positions = <39 38>;
+            key-positions = <39 38>;  // 右手拇指兩鍵同按
         };
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <1 2>;
+            key-positions = <1 2>;    // W+E 同按 = Tab
         };
 
         enter {
             bindings = <&kp ENTER>;
-            key-positions = <17 18>;
+            key-positions = <17 18>;  // J+K 同按 = Enter
         };
 
         input_switch {
             bindings = <&kp LC(SPACE)>;
-            key-positions = <11 12>;
+            key-positions = <11 12>;  // S+D 同按 = 切換輸入法（Ctrl+Space）
         };
     };
 
@@ -69,7 +69,7 @@
         scroll_up_down: mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;  // 順時針=上捲，逆時針=下捲（配合macOS自然捲動）
 
             tap-ms = <20>;
         };
@@ -77,7 +77,7 @@
         scroll_right_left: mouse_wheel_right_left {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;  // SYM層時encoder變水平捲動
 
             tap-ms = <20>;
         };
@@ -141,7 +141,7 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        MOUSE {
+        MOUSE {  // 軌跡球移動時自動切換到此層，G=左鍵、B=右鍵
             bindings = <
 &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &mkp MB1             &trans  &trans  &trans  &trans  &trans  &trans
@@ -152,7 +152,7 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        SCROLL {
+        SCROLL {  // 軌跡球變捲輪模式（在MOUSE層按住mo 6觸發）
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
@@ -163,7 +163,7 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        VIM {
+        VIM {  // 按住Space啟用，H=左 J=下 K=上 L=右（Vim風格方向鍵）
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans    &trans    &trans  &trans     &trans
 &trans  &trans  &trans  &trans  &trans            &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
@@ -174,7 +174,7 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        DESKTOP {
+        DESKTOP {  // 長按W啟用，H=切左桌面 L=切右桌面（macOS Ctrl+Left/Right）
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans        &trans  &trans  &trans         &trans
 &trans  &trans  &trans  &trans  &trans            &trans  &kp LC(LEFT)  &trans  &trans  &kp LC(RIGHT)  &trans

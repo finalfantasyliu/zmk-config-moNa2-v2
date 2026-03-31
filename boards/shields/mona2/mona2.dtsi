@@ -85,13 +85,22 @@
                 ;
     };
 
-    //right hand trackball
+    //右手軌跡球自動切層設定
+    //  require-prior-idle-ms: 打字後至少500ms沒按鍵才會觸發自動切層，防止打字時誤觸
+    //  excluded-positions: G(14)和B(25)為滑鼠鍵，按下時不會讓自動切層計時器重置
+    /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        require-prior-idle-ms = <500>;
+        excluded-positions = <14 25>;
+    };
+
     trackball_central_listener: trackball_central_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,         //X軸反転
-            <&zip_temp_layer 5 500>;                              //オートマウスレイヤーの選択
+            <&zip_temp_layer 5 800>;                              //軌跡球移動時自動切到MOUSE層，800ms後自動退出
     };
 
     left_encoder: encoder_left {
