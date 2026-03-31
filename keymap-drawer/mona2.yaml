@@ -198,7 +198,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&ind_bat'
   - '&bootloader'
   - BT CLR ALL
   - {t: ▽, type: trans}
