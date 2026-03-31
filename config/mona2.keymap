@@ -38,6 +38,11 @@
             bindings = <&kp ENTER>;
             key-positions = <17 18>;
         };
+
+        input_switch {
+            bindings = <&kp LC(SPACE)>;
+            key-positions = <11 12>;
+        };
     };
 
     macros {
