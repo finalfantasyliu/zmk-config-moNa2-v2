@@ -77,7 +77,7 @@
         scroll_right_left: mouse_wheel_right_left {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;  // SYM層時encoder變水平捲動（配合macOS自然捲動）
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;  // SYM層時encoder變水平捲動
 
             tap-ms = <20>;
         };
