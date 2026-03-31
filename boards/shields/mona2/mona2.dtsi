@@ -107,7 +107,7 @@
         compatible = "alps,ec11";
         a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <24>;
+        steps = <80>;  //改為80以匹配ZMK官方4:1比例，改善快轉穩定性
         status = "disabled";
     };
 
@@ -118,7 +118,7 @@
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
-        triggers-per-rotation = <10>;
+        triggers-per-rotation = <20>;  //每圈觸發20次（官方標準值）
     };
 
 };
