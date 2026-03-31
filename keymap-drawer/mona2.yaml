@@ -304,5 +304,7 @@ layers:
 combos:
 - p: [39, 38]
   k: {t: ESC, h: BLUETOOTH}
-- p: [11, 12]
+- p: [1, 2]
   k: TAB
+- p: [17, 18]
+  k: ENTER
