@@ -15,11 +15,13 @@
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
+    require-prior-idle-ms = <150>;   // 打字快時直接判定tap，消除黏滯感
 };
 
 &lt {
     quick-tap-ms = <300>;
     flavor = "balanced";
+    require-prior-idle-ms = <150>;   // 打字快時直接判定tap，消除黏滯感
 };
 
 / {
