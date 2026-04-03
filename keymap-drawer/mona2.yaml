@@ -67,8 +67,8 @@ layers:
   - $
   - '~'
   - '`'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&scope'
+  - '&arrow_op'
   - '@'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
