@@ -37,11 +37,13 @@
         tab {
             bindings = <&kp TAB>;
             key-positions = <1 2>;    // W+E 同按 = Tab
+            slow-release;
         };
 
         enter {
             bindings = <&kp ENTER>;
             key-positions = <17 18>;  // J+K 同按 = Enter
+            slow-release;
         };
 
         input_switch {
