@@ -26,7 +26,7 @@
 };
 
 // 點擊滑鼠鍵時延長 MOUSE 層超時至 5 秒，讓雙擊/連續操作有充足時間
-&mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 5000>; };
+&mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 2000>; };
 
 / {
     combos {
