@@ -20,9 +20,10 @@
 };
 
 &lt {
-    quick-tap-ms = <300>;
+    tapping-term-ms = <220>;
+    quick-tap-ms = <200>;
     flavor = "balanced";
-    require-prior-idle-ms = <150>;   // 打字快時直接判定tap，消除黏滯感
+    require-prior-idle-ms = <100>;   // 降低門檻讓切層更靈敏（原150太嚴格）
 };
 
 / {
@@ -47,9 +48,9 @@
         };
 
         input_switch {
-            bindings = <&kp LC(SPACE)>;
-            key-positions = <11 12>;  // S+D 同按 = 切換輸入法（Ctrl+Space）
-            slow-release;             // 兩鍵都放開才結束，防止重複觸發
+            bindings = <&input_tap>;
+            key-positions = <11 12>;  // S+D 同按 = 切換輸入法
+            slow-release;
         };
     };
 
@@ -73,6 +74,13 @@
             #binding-cells = <0>;
             bindings = <&kp MINUS &kp LS(DOT)>;
             label = "ARROW_OPERATOR";
+        };
+
+        input_tap: input_tap {  // Ctrl+Space 單次點按，不會因按住而重複
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LC(SPACE)>;
+            label = "INPUT_TAP";
         };
     };
 
