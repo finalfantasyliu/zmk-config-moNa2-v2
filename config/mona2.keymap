@@ -60,6 +60,20 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        scope: scope {  // C++ ::
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(SEMICOLON) &kp LS(SEMICOLON)>;
+            label = "SCOPE_RESOLUTION";
+        };
+
+        arrow_op: arrow_op {  // C++ ->
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp LS(DOT)>;
+            label = "ARROW_OPERATOR";
+        };
     };
 
     behaviors {
@@ -107,7 +121,7 @@
             bindings = <
 &kp SINGLE_QUOTE  &kp LESS_THAN  &kp GREATER_THAN  &kp DOUBLE_QUOTES  &kp CARET                      &kp PIPE        &kp AMPERSAND  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PERCENT
 &kp EXCLAMATION   &kp SLASH      &kp ASTRK         &kp BACKSLASH      &kp HASH               &trans  &kp MINUS       &kp EQUAL      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR
-&kp TILDE         &kp GRAVE      &trans            &trans             &kp AT_SIGN  &trans    &trans  &kp UNDERSCORE  &kp PLUS       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp QUESTION
+&kp TILDE         &kp GRAVE      &scope            &arrow_op          &kp AT_SIGN  &trans    &trans  &kp UNDERSCORE  &kp PLUS       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp QUESTION
 &trans            &trans         &trans            &trans             &trans       &trans    &trans  &trans                                                                      &trans
             >;
 
