@@ -197,7 +197,7 @@
         DESKTOP {  // 長按W啟用，H=切左桌面 L=切右桌面（macOS Ctrl+Left/Right）
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans        &trans  &trans  &trans         &trans
-&trans  &trans  &trans  &trans  &trans            &trans  &kp LC(LEFT)  &trans  &trans  &kp LC(RIGHT)  &trans
+&trans  &trans  &trans  &trans  &trans            &trans  &kp LC(LEFT)  &kp LC(DOWN)  &kp LC(UP)  &kp LC(RIGHT)  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans  &trans  &trans         &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                       &trans
             >;
