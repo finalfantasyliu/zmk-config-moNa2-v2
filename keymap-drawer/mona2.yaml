@@ -362,8 +362,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Ctl+LEFT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+DOWN
+  - Ctl+UP
   - Ctl+RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
