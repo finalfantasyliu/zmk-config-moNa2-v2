@@ -25,8 +25,8 @@
     flavor = "balanced";
 };
 
-// 點擊滑鼠鍵時延長 MOUSE 層超時至 5 秒，讓雙擊/連續操作有充足時間
-&mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 2000>; };
+// 點完滑鼠鍵後 250ms 退出 MOUSE 層（快速回到打字模式）
+&mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 250>; };
 
 / {
     combos {
