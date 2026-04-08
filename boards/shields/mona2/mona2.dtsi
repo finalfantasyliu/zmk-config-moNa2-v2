@@ -100,7 +100,7 @@
         status = "disabled";
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,         //X軸反転
-            <&zip_temp_layer 5 10000>;                            //軌跡球移動時自動切到MOUSE層，10秒超時（移動中不退出）
+            <&zip_temp_layer 5 2000>;                             //軌跡球移動時自動切到MOUSE層，2秒超時（移動中不退出）
     };
 
     left_encoder: encoder_left {
